@@ -15,7 +15,7 @@ export type ApiData = {
 };
 
 export type ApiResultData = {
-    "rating": "E" | "D" | "C" | "B" | "A" | "S" | "S+" | "S++",
+    "rating": Rating,
     "no_miss": number,
     "full_chain": number,
     "perfect": number,
@@ -37,6 +37,9 @@ type ApiDifficulty = {
     "music_difficulty": 0 | 1 | 2 | 3;
 }
 
+export type Rating = "E" | "D" | "C" | "B" | "A" | "S" | "S+" | "S++";
+export type Status = "FAILED" | "CLEAR" | "NO MISS" | "FULL CHAIN" | "PERFECT";
+
 export class SongData {
     music_id: number;
     song_title: string;
@@ -44,21 +47,21 @@ export class SongData {
     favorite: "" | "o";
     ex_flag: "" | "o";
     score_simple: "" | number;
-    rate_simple: "" | "E" | "D" | "C" | "B" | "A" | "S" | "S+" | "S++";
+    rate_simple: "" | Rating;
     count_simple: "" | number;
-    status_simple: "" | "FAILED" | "CLEAR" | "NO MISS" | "FULL CHAIN" | "PERFECT";
+    status_simple: "" | Status;
     score_normal: "" | number;
-    rate_normal: "" | "E" | "D" | "C" | "B" | "A" | "S" | "S+" | "S++";
+    rate_normal: "" | Rating;
     count_normal: "" | number;
-    status_normal: "" | "FAILED" | "CLEAR" | "NO MISS" | "FULL CHAIN" | "PERFECT";
+    status_normal: "" | Status;
     score_hard: "" | number;
-    rate_hard: "" | "E" | "D" | "C" | "B" | "A" | "S" | "S+" | "S++";
+    rate_hard: "" | Rating;
     count_hard: "" | number;
-    status_hard: "" | "FAILED" | "CLEAR" | "NO MISS" | "FULL CHAIN" | "PERFECT";
+    status_hard: "" | Status;
     score_extra: "" | number;
-    rate_extra: "" | "E" | "D" | "C" | "B" | "A" | "S" | "S+" | "S++";
+    rate_extra: "" | Rating;
     count_extra: "" | number;
-    status_extra: "" | "FAILED" | "CLEAR" | "NO MISS" | "FULL CHAIN" | "PERFECT";
+    status_extra: "" | Status;
 
     constructor(musicId: number, title: string, artist: string) {
         this.music_id = musicId;

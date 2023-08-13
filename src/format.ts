@@ -1,5 +1,7 @@
 import { ApiData } from "./json";
 import { ApiResultData } from "./json";
+import { Rating } from "./json";
+import { Status } from "./json";
 import { SongData } from "./json";
 
 export function format(apiData: ApiData[]): SongData[] {
@@ -62,7 +64,7 @@ function score(resultData: null | ApiResultData): "" | number {
     return resultData.score;
 }
 
-function rate(resultData: null | ApiResultData): "" | "E" | "D" | "C" | "B" | "A" | "S" | "S+" | "S++" {
+function rate(resultData: null | ApiResultData): "" | Rating {
     if (resultData === null)
         return "";
     return resultData.rating;
@@ -74,7 +76,7 @@ function count(resultData: null | ApiResultData): "" | number {
     return resultData.play_count;
 }
 
-function status(resultData: null | ApiResultData): "" | "FAILED" | "CLEAR" | "NO MISS" | "FULL CHAIN" | "PERFECT" {
+function status(resultData: null | ApiResultData): "" | Status {
     if (resultData === null)
         return "";
     if (resultData.perfect > 0)
@@ -83,7 +85,7 @@ function status(resultData: null | ApiResultData): "" | "FAILED" | "CLEAR" | "NO
         return "FULL CHAIN";
     if (resultData.no_miss > 0)
         return "NO MISS";
-    if (resultData.is_failed_mark !== false)
+    if (!resultData.is_failed_mark)
         return "CLEAR";
     return "FAILED";
 }
