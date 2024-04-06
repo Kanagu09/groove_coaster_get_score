@@ -52,25 +52,37 @@ export class SongData {
     rate_simple: "" | Rating;
     status_simple: "" | Status;
     rank_simple: "" | number;
-    count_simple: "" | number;
+    play_count_simple: "" | number;
+    nomiss_count_simple: "" | number;
+    fullchain_count_simple: "" | number;
+    perfect_count_simple: "" | number;
 
     score_normal: "" | number;
     rate_normal: "" | Rating;
     status_normal: "" | Status;
     rank_normal: "" | number;
-    count_normal: "" | number;
+    play_count_normal: "" | number;
+    nomiss_count_normal: "" | number;
+    fullchain_count_normal: "" | number;
+    perfect_count_normal: "" | number;
 
     score_hard: "" | number;
     rate_hard: "" | Rating;
     status_hard: "" | Status;
     rank_hard: "" | number;
-    count_hard: "" | number;
+    play_count_hard: "" | number;
+    nomiss_count_hard: "" | number;
+    fullchain_count_hard: "" | number;
+    perfect_count_hard: "" | number;
 
     score_extra: "" | number;
     rate_extra: "" | Rating;
     status_extra: "" | Status;
     rank_extra: "" | number;
-    count_extra: "" | number;
+    play_count_extra: "" | number;
+    nomiss_count_extra: "" | number;
+    fullchain_count_extra: "" | number;
+    perfect_count_extra: "" | number;
 
     constructor(musicId: number, title: string, artist: string) {
         this.music_id = musicId;
@@ -84,25 +96,37 @@ export class SongData {
         this.rate_simple = "";
         this.status_simple = "";
         this.rank_simple = "";
-        this.count_simple = "";
+        this.play_count_simple = "";
+        this.nomiss_count_simple = "";
+        this.fullchain_count_simple = "";
+        this.perfect_count_simple = "";
 
         this.score_normal = "";
         this.rate_normal = "";
         this.status_normal = "";
         this.rank_normal = "";
-        this.count_normal = "";
+        this.play_count_normal = "";
+        this.nomiss_count_normal = "";
+        this.fullchain_count_normal = "";
+        this.perfect_count_normal = "";
 
         this.score_hard = "";
         this.rate_hard = "";
         this.status_hard = "";
         this.rank_hard = "";
-        this.count_hard = "";
+        this.play_count_hard = "";
+        this.nomiss_count_hard = "";
+        this.fullchain_count_hard = "";
+        this.perfect_count_hard = "";
 
         this.score_extra = "";
         this.rate_extra = "";
         this.status_extra = "";
         this.rank_extra = "";
-        this.count_extra = "";
+        this.play_count_extra = "";
+        this.nomiss_count_extra = "";
+        this.fullchain_count_extra = "";
+        this.perfect_count_extra = "";
     }
 }
 

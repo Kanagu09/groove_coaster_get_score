@@ -27,11 +27,6 @@ export function format(apiData: ApiData[]): SongData[] {
         song.rate_hard = rate(data.hard_result_data);
         song.rate_extra = rate(data.extra_result_data);
 
-        song.count_simple = count(data.simple_result_data);
-        song.count_normal = count(data.normal_result_data);
-        song.count_hard = count(data.hard_result_data);
-        song.count_extra = count(data.extra_result_data);
-
         song.status_simple = status(data.simple_result_data);
         song.status_normal = status(data.normal_result_data);
         song.status_hard = status(data.hard_result_data);
@@ -41,6 +36,26 @@ export function format(apiData: ApiData[]): SongData[] {
         song.rank_normal = rank(data.user_rank)[1];
         song.rank_hard = rank(data.user_rank)[2];
         song.rank_extra = rank(data.user_rank)[3];
+
+        song.play_count_simple = play_count(data.simple_result_data);
+        song.play_count_normal = play_count(data.normal_result_data);
+        song.play_count_hard = play_count(data.hard_result_data);
+        song.play_count_extra = play_count(data.extra_result_data);
+
+        song.nomiss_count_simple = nomiss_count(data.simple_result_data);
+        song.nomiss_count_normal = nomiss_count(data.normal_result_data);
+        song.nomiss_count_hard = nomiss_count(data.hard_result_data);
+        song.nomiss_count_extra = nomiss_count(data.extra_result_data);
+
+        song.fullchain_count_simple = fullchain_count(data.simple_result_data);
+        song.fullchain_count_normal = fullchain_count(data.normal_result_data);
+        song.fullchain_count_hard = fullchain_count(data.hard_result_data);
+        song.fullchain_count_extra = fullchain_count(data.extra_result_data);
+
+        song.perfect_count_simple = perfect_count(data.simple_result_data);
+        song.perfect_count_normal = perfect_count(data.normal_result_data);
+        song.perfect_count_hard = perfect_count(data.hard_result_data);
+        song.perfect_count_extra = perfect_count(data.extra_result_data);
 
         allData.push(song);
     }
@@ -77,10 +92,28 @@ function rate(resultData: null | ApiResultData): "" | Rating {
     return resultData.rating;
 }
 
-function count(resultData: null | ApiResultData): "" | number {
+function play_count(resultData: null | ApiResultData): "" | number {
     if (resultData === null)
         return "";
     return resultData.play_count;
+}
+
+function nomiss_count(resultData: null | ApiResultData): "" | number {
+    if (resultData === null)
+        return "";
+    return resultData.no_miss;
+}
+
+function fullchain_count(resultData: null | ApiResultData): "" | number {
+    if (resultData === null)
+        return "";
+    return resultData.full_chain;
+}
+
+function perfect_count(resultData: null | ApiResultData): "" | number {
+    if (resultData === null)
+        return "";
+    return resultData.perfect;
 }
 
 function status(resultData: null | ApiResultData): "" | Status {
