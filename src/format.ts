@@ -57,6 +57,16 @@ export function format(apiData: ApiData[]): SongData[] {
         song.perfect_count_hard = perfect_count(data.hard_result_data);
         song.perfect_count_extra = perfect_count(data.extra_result_data);
 
+        song.max_chain_simple = max_chain(data.simple_result_data);
+        song.max_chain_normal = max_chain(data.normal_result_data);
+        song.max_chain_hard = max_chain(data.hard_result_data);
+        song.max_chain_extra = max_chain(data.extra_result_data);
+
+        song.adlib_simple = adlib(data.simple_result_data);
+        song.adlib_normal = adlib(data.normal_result_data);
+        song.adlib_hard = adlib(data.hard_result_data);
+        song.adlib_extra = adlib(data.extra_result_data);
+
         allData.push(song);
     }
     return allData;
@@ -114,6 +124,18 @@ function perfect_count(resultData: null | ApiResultData): "" | number {
     if (resultData === null)
         return "";
     return resultData.perfect;
+}
+
+function max_chain(resultData: null | ApiResultData): "" | number {
+    if (resultData === null)
+        return "";
+    return resultData.max_chain;
+}
+
+function adlib(resultData: null | ApiResultData): "" | number {
+    if (resultData === null)
+        return "";
+    return resultData.adlib;
 }
 
 function status(resultData: null | ApiResultData): "" | Status {

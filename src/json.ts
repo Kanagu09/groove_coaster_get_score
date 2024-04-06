@@ -56,6 +56,8 @@ export class SongData {
     nomiss_count_simple: "" | number;
     fullchain_count_simple: "" | number;
     perfect_count_simple: "" | number;
+    max_chain_simple: "" | number;
+    adlib_simple: "" | number;
 
     score_normal: "" | number;
     rate_normal: "" | Rating;
@@ -65,6 +67,8 @@ export class SongData {
     nomiss_count_normal: "" | number;
     fullchain_count_normal: "" | number;
     perfect_count_normal: "" | number;
+    max_chain_normal: "" | number;
+    adlib_normal: "" | number;
 
     score_hard: "" | number;
     rate_hard: "" | Rating;
@@ -74,6 +78,8 @@ export class SongData {
     nomiss_count_hard: "" | number;
     fullchain_count_hard: "" | number;
     perfect_count_hard: "" | number;
+    max_chain_hard: "" | number;
+    adlib_hard: "" | number;
 
     score_extra: "" | number;
     rate_extra: "" | Rating;
@@ -83,6 +89,8 @@ export class SongData {
     nomiss_count_extra: "" | number;
     fullchain_count_extra: "" | number;
     perfect_count_extra: "" | number;
+    max_chain_extra: "" | number;
+    adlib_extra: "" | number;
 
     constructor(musicId: number, title: string, artist: string) {
         this.music_id = musicId;
@@ -100,6 +108,8 @@ export class SongData {
         this.nomiss_count_simple = "";
         this.fullchain_count_simple = "";
         this.perfect_count_simple = "";
+        this.max_chain_simple = "";
+        this.adlib_simple = "";
 
         this.score_normal = "";
         this.rate_normal = "";
@@ -109,6 +119,8 @@ export class SongData {
         this.nomiss_count_normal = "";
         this.fullchain_count_normal = "";
         this.perfect_count_normal = "";
+        this.max_chain_normal = "";
+        this.adlib_normal = "";
 
         this.score_hard = "";
         this.rate_hard = "";
@@ -118,6 +130,8 @@ export class SongData {
         this.nomiss_count_hard = "";
         this.fullchain_count_hard = "";
         this.perfect_count_hard = "";
+        this.max_chain_hard = "";
+        this.adlib_hard = "";
 
         this.score_extra = "";
         this.rate_extra = "";
@@ -127,6 +141,8 @@ export class SongData {
         this.nomiss_count_extra = "";
         this.fullchain_count_extra = "";
         this.perfect_count_extra = "";
+        this.max_chain_extra = "";
+        this.adlib_extra = "";
     }
 }
 
