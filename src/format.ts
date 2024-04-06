@@ -1,5 +1,6 @@
 import { ApiData } from "./json";
 import { ApiResultData } from "./json";
+import { ApiUserRank } from "./json";
 import { Rating } from "./json";
 import { Status } from "./json";
 import { SongData } from "./json";
@@ -12,6 +13,7 @@ export function format(apiData: ApiData[]): SongData[] {
             data.music_title,
             data.artist
         );
+        song.skin_name = data.skin_name;
         song.favorite = favorite(data.fav_flg);
         song.ex_flag = exFlag(data.ex_flag);
 
@@ -34,6 +36,11 @@ export function format(apiData: ApiData[]): SongData[] {
         song.status_normal = status(data.normal_result_data);
         song.status_hard = status(data.hard_result_data);
         song.status_extra = status(data.extra_result_data);
+
+        song.rank_simple = rank(data.user_rank)[0];
+        song.rank_normal = rank(data.user_rank)[1];
+        song.rank_hard = rank(data.user_rank)[2];
+        song.rank_extra = rank(data.user_rank)[3];
 
         allData.push(song);
     }
@@ -88,4 +95,16 @@ function status(resultData: null | ApiResultData): "" | Status {
     if (!resultData.is_failed_mark)
         return "CLEAR";
     return "FAILED";
+}
+
+function rank(rankData: null | ApiUserRank[]): ("" | number)[] {
+    let rank: ("" | number)[] = ["", "", "", ""];
+    if (rankData == null)
+        return rank;
+    for (let data of rankData) {
+        if (data == null)
+            continue;
+        rank[data.difficulty] = data.rank;
+    }
+    return rank;
 }

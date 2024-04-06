@@ -28,7 +28,7 @@ export type ApiResultData = {
     "adlib": number
 }
 
-type ApiUserRank = {
+export type ApiUserRank = {
     "rank": number,
     "difficulty": 0 | 1 | 2 | 3
 }
@@ -44,47 +44,65 @@ export class SongData {
     music_id: number;
     song_title: string;
     song_artist: string;
+    skin_name: string;
     favorite: "" | "o";
     ex_flag: "" | "o";
+
     score_simple: "" | number;
     rate_simple: "" | Rating;
-    count_simple: "" | number;
     status_simple: "" | Status;
+    rank_simple: "" | number;
+    count_simple: "" | number;
+
     score_normal: "" | number;
     rate_normal: "" | Rating;
-    count_normal: "" | number;
     status_normal: "" | Status;
+    rank_normal: "" | number;
+    count_normal: "" | number;
+
     score_hard: "" | number;
     rate_hard: "" | Rating;
-    count_hard: "" | number;
     status_hard: "" | Status;
+    rank_hard: "" | number;
+    count_hard: "" | number;
+
     score_extra: "" | number;
     rate_extra: "" | Rating;
-    count_extra: "" | number;
     status_extra: "" | Status;
+    rank_extra: "" | number;
+    count_extra: "" | number;
 
     constructor(musicId: number, title: string, artist: string) {
         this.music_id = musicId;
         this.song_title = title;
         this.song_artist = artist;
+        this.skin_name = "";
         this.favorite = "";
         this.ex_flag = "";
+
         this.score_simple = "";
         this.rate_simple = "";
-        this.count_simple = "";
         this.status_simple = "";
+        this.rank_simple = "";
+        this.count_simple = "";
+
         this.score_normal = "";
         this.rate_normal = "";
-        this.count_normal = "";
         this.status_normal = "";
+        this.rank_normal = "";
+        this.count_normal = "";
+
         this.score_hard = "";
         this.rate_hard = "";
-        this.count_hard = "";
         this.status_hard = "";
+        this.rank_hard = "";
+        this.count_hard = "";
+
         this.score_extra = "";
         this.rate_extra = "";
-        this.count_extra = "";
         this.status_extra = "";
+        this.rank_extra = "";
+        this.count_extra = "";
     }
 }
 
